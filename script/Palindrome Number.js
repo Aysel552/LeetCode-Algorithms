@@ -1,15 +1,15 @@
 var isPalindrome = function (x) {
-    // find the length of the string
-    const len = x.length;
-
-    // loop through half of the string
+    if(x < 0)
+        return false
     
-    for (let i = 0; i < len/2; i++) {
-        if(x[i] != [len -1 -i]){
-            return 'It is not a palindrome'
-        }
-            
-        }
-    return "It is a palindrome"
+    let reversedInteger = 0, y=x
+    
+    while(y>0){
+        const lastDigit  = y % 10
+        reversedInteger = (reversedInteger * 10) + lastDigit
+        y= (y/10) | 0
+    }
+    
+    return x === reversedInteger
     
     }
